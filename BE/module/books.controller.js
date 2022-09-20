@@ -33,6 +33,7 @@ async function editBooks(req, res, next) {
     const book = await Books.findByIdAndUpdate(id, req.body);
     // console.log(book);
     res.json({
+      success: true,
       request: book,
     });
   } catch (error) {
