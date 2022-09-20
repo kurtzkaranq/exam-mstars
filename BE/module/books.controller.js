@@ -50,5 +50,15 @@ async function deleteBooks(req, res, next) {
     console.error(error);
   }
 }
-
-module.exports = { getBooks, postBooks, editBooks, deleteBooks };
+async function getBookById(req, res, next) {
+  try {
+    const { id } = req.params;
+    const book = await Books.findById(id);
+    res.json({
+      book,
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+module.exports = { getBooks, postBooks, editBooks, deleteBooks, getBookById };
