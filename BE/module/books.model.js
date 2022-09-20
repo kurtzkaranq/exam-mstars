@@ -6,7 +6,7 @@ const BooksSchema = new Schema({
     type: String,
   },
   code: {
-    type: String,
+    type: Number,
     unique: true,
   },
   price: {

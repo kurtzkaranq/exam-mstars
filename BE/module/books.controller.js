@@ -10,6 +10,7 @@ async function getBooks(req, res, next) {
   }
 }
 async function postBooks(req, res, next) {
+  console.log(req.body);
   try {
     const body = req.body;
     const book = new Books(body);
